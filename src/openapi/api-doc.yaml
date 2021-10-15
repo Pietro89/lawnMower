@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: Mow Lawn API
+  description: A sample api to mow lawn, try it with this postman collection [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7e5f0618a95dd9ced942)
+  version: 0.0.1
+servers:
+- url: localhost:3000
+  description: This project is supposed to run locally only
+paths:
+  /mowlawn:
+    post:
+      x-eov-operation-id: postMowLawn
+      x-eov-operation-handler: /mowLawn/index.ts
+      summary: Mow Lawn
+      description: Mows lawn and returns positions of mowers
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                inputFile:
+                  type: string
+                  format: binary
+                  description: a text file containg the istructions for the mowers.
+
+                    * The first line is the coordinates of the upper-right corner of the lawn, coordinates of
+                    lower-left corner are supposed to be (0,0)
+
+                    * Next lines of the file drive all mowers. There are two lines for each mower
+
+                    * First line give the initial position and orientation of the mower. Coordinate and orientation
+                    are given by 2 numbers and a letter, separated by a space
+
+                    * Second line is a sequence of instruction driving the mower across the lawn. Instructions
+                    are a sequence of letters without space.
+      responses:
+        '200':    # status code
+          description: The final positions of the mowers, one per line in a text block
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Client error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    Hello:
+      type: object
+      description: A hello object
+      properties:
+        name:
+          type: string
+        size:
+          type: integer
+          minimum: 1
