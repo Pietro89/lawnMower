@@ -12,7 +12,7 @@ paths:
       x-eov-operation-id: postMowLawn
       x-eov-operation-handler: /mowLawn/index.ts
       summary: Mow Lawn
-      description: Mows lawn and returns positions of mowers
+      description: Mows lawn and returns final positions of mowers
       requestBody:
         content:
           multipart/form-data:
@@ -35,7 +35,7 @@ paths:
                     * Second line is a sequence of instruction driving the mower across the lawn. Instructions
                     are a sequence of letters without space.
       responses:
-        '200':    # status code
+        '200':
           description: The final positions of the mowers, one per line in a text block
           content:
             application/json:
@@ -50,14 +50,3 @@ paths:
                 properties:
                   message:
                     type: string
-components:
-  schemas:
-    Hello:
-      type: object
-      description: A hello object
-      properties:
-        name:
-          type: string
-        size:
-          type: integer
-          minimum: 1

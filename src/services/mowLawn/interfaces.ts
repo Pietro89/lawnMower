@@ -23,7 +23,7 @@ interface MowerOperation {
 }
 
 /**
- * A lawn to mow with an operationFieldTOpCorner to determine the dimension of the field and an array of mower operations to perform
+ * A lawn to mow with an operationFieldTopCorner to determine the dimension of the field and an array of mower operations to perform
  */
 interface LawnToMow {
     operatingFieldTopCorner: Coordinate,

@@ -2,7 +2,10 @@ import {Coordinate, Position} from "./interfaces";
 
 const orientations: string[] = ['N', 'E', 'S', 'W']
 
-class MowLawner {
+/**
+ * A LawnMower, has a current position and can turn left or right or move forward without going out of the field
+ */
+class LawnMower {
     currentPosition: Position
     operatingFieldTopCorner: Coordinate
 
@@ -63,4 +66,4 @@ class MowLawner {
 
 }
 
-export {MowLawner}
+export {LawnMower}

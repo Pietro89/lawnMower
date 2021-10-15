@@ -34,7 +34,7 @@ app.get(
 );
 
 
-// use the openapi spec to validate the api inputs
+// use the openapi spec to validate the api inputs and outputs
 app.use(
     OpenApiValidator.middleware({
         apiSpec: './src/openapi/api-doc.yaml',

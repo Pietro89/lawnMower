@@ -8,6 +8,7 @@ const brokenInputPath = './src/tests/mocks/brokenInput.txt'
 const okInputPath = './src/tests/mocks/input.txt'
 
 describe('API - mowLawn controller', () => {
+
     it('should return a 405 error when trying to GET', async () => {
         const res = await chai.request(app).get('/mowLawn')
         chai.expect(res.status).to.equal(405);
@@ -33,7 +34,7 @@ describe('API - mowLawn controller', () => {
         chai.expect(res.status).to.equal(200);
     })
 
-    it('should return the example result with the example input file', async () => {
+    it('should return the example result with the right final positions', async () => {
         const res = await chai.request(app)
             .post('/mowLawn')
             .attach('inputFile', okInputPath);

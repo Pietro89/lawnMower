@@ -1,5 +1,5 @@
 import {LawnToMow, Position} from "./interfaces";
-import {MowLawner} from "./MowLawner";
+import {LawnMower} from "./LawnMower";
 
 class Gardener {
 
@@ -16,7 +16,7 @@ class Gardener {
         const {mowersOperations, operatingFieldTopCorner} = this.mowToLawn
         return mowersOperations.map((mowerOperation) => {
             const {initialPosition, actions} = mowerOperation
-            const mower = new MowLawner(initialPosition, operatingFieldTopCorner)
+            const mower = new LawnMower(initialPosition, operatingFieldTopCorner)
 
             for (const action of actions) {
                 if (action === 'L') {

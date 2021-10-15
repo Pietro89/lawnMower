@@ -6,9 +6,9 @@ import {Gardener} from "../../services/mowLawn/Gardener";
 import {MowLawnParser} from "../../services/parser/MowLawnParser";
 
 /**
- * Controller for the POST /mowlawn route.
- * @param req
- * @param res
+ * Controller for the POST /mowlawn route. (Editor may lint as Unused but thats actually the main controller)
+ * @param req the http Request with body containing the inputFile
+ * @param res the http Response with the stringified text of the final positions
  */
 export const postMowLawn = async (req: Request, res: Response): Promise<Response> => {
     try {
