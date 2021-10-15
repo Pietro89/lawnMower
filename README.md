@@ -1,4 +1,4 @@
-#Mow Lawn API
+# Mow Lawn API
 A one-endpoint API to mow a Lawn. Originally made for an interview process this is a project to get familiar with Typescript.
 
 The core of the exercise **required by the interview** is witheld in the ```src/services/mowLawn``` folder
