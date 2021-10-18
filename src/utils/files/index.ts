@@ -5,7 +5,7 @@ interface File {
     buffer: Buffer
 }
 
-export const parseFileFromRequest = (fileName: string, req: Request): string | null => {
+export const fileFromRequest = (fileName: string, req: Request): string | null => {
     if (!req.files) {
         return null
     }

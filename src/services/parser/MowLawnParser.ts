@@ -55,7 +55,7 @@ class MowLawnParser {
 
     /**
      * Stringify the array of positions to output them as text
-     * @param finalPositions
+     * @param finalPositions a string with one mower position per line
      */
     static stringifyFinalPositions(finalPositions: Position[]): string {
         return finalPositions.map((position) => `${position.x} ${position.y} ${position.orientation}`).join('\n')

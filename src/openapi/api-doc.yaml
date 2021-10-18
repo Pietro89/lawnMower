@@ -50,3 +50,5 @@ paths:
                 properties:
                   message:
                     type: string
+        '5XX':
+          description: Unexpected server error.

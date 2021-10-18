@@ -15,6 +15,12 @@ describe('LawnMower turning', () => {
         chai.expect(mowLawner.currentPosition.orientation).to.equal('W');
     })
 
+    it('should turn left (From west to south)', async () => {
+        const mowLawner = new LawnMower({x: 1, y: 1, orientation: 'W'}, {x: 5, y: 5})
+        mowLawner.turnLeft()
+        chai.expect(mowLawner.currentPosition.orientation).to.equal('S');
+    })
+
     it('should turn right (from north to east)', async () => {
         const mowLawner = new LawnMower({x: 1, y: 1, orientation: 'N'}, {x: 5, y: 5})
         mowLawner.turnRight()
@@ -29,6 +35,7 @@ describe('LawnMower turning', () => {
 })
 
 describe('LawnMower mooving', () => {
+
     it('should moove from 0,0 to 0,1 when facing north', async () => {
         const mowLawner = new LawnMower({x: 0, y: 0, orientation: 'N'}, {x: 5, y: 5})
         mowLawner.moove()
